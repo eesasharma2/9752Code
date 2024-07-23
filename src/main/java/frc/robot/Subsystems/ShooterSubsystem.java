@@ -65,7 +65,7 @@ public class ShooterSubsystem extends SubsystemBase {
 
   public void setShooter(double speed) {
     shootermotor_1.set(speed);
-    shootermotor_2.set(speed*-0.9);
+    shootermotor_2.set(speed*0.9);
   }
 
 }

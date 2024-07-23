@@ -31,7 +31,7 @@ public class SmartOutake extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    shooter.servoPosition(0.45);
+    shooter.servoPosition(0.35);
     intake.setIntake(-1);
     transfer.setTransfer(-1);
   }

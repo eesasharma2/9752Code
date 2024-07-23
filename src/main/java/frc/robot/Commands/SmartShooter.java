@@ -36,11 +36,11 @@ public class SmartShooter extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    shooter.setShooter(-1);
-    if(timer.get() > .3) {
-      shooter.servoPosition(0.45);
+    shooter.setShooter(1);
+    if(timer.get() > .4) {
+      shooter.servoPosition(0.35);
     }
-    if(timer.get() > .6){
+    if(timer.get() > .7){
       transfer.setTransfer(1);
       }
     else {

@@ -34,8 +34,8 @@ public class SmartIntake extends Command {
   public void execute() {
     arm.setArmPosition(0);
     if (arm.armPositionReached) {
-      intake.setIntake(.6);
-      transfer.setTransfer(.3);
+      intake.setIntake(1);
+      transfer.setTransfer(.4);
     }
     
 
