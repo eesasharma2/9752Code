@@ -30,8 +30,8 @@ public class ArmSubsystem extends SubsystemBase {
     slot0Configs.kD = ArmPIDConstants.kD;
 
     motionMagicConfigs.MotionMagicCruiseVelocity = 150; // 80
-    motionMagicConfigs.MotionMagicAcceleration = 200;// 160
-    motionMagicConfigs.MotionMagicJerk = 1200; //1600
+    motionMagicConfigs.MotionMagicAcceleration = 500;// 160
+    motionMagicConfigs.MotionMagicJerk = 1300; //1600
   
     armMotor.getConfigurator().apply(armConfigs);
 

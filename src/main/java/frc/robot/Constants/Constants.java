@@ -4,7 +4,7 @@ public final class Constants {
     //Arm Constants --
         public static final int kArmMotorPort = 16;
         public static final double ampPos = 65;
-        public static final double spkPos = 12;
+        public static final double spkPos = 15;
         public static final double basePos = 0;
 
         public class ArmPIDConstants {
@@ -16,8 +16,8 @@ public final class Constants {
         }
 
         public class ShooterPIDConstants {
-            public static final double kP = 1;
+            public static final double kP = 5;
             public static final double kI = 0;
-            public static final double kD = 0.2;
+            public static final double kD = 0.1;
         }
     }

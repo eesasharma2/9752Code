@@ -36,7 +36,8 @@ public class SmartShooter extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    shooter.setShooter(1);
+    shooter.setShooterRPM1(1);
+    shooter.setShooterRPM2(1);
     if(timer.get() > .4) {
       shooter.servoPosition(0.35);
     }

@@ -6,6 +6,8 @@ package frc.robot.Subsystems;
 
 import com.ctre.phoenix6.configs.MotionMagicConfigs;
 import com.ctre.phoenix6.configs.Slot0Configs;
+import com.ctre.phoenix6.configs.TalonFXConfiguration;
+import com.ctre.phoenix6.controls.MotionMagicVoltage;
 import com.revrobotics.CANSparkFlex;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj.Servo;
@@ -19,8 +21,10 @@ public class ShooterSubsystem extends SubsystemBase {
   private final CANSparkFlex shootermotor_2 = new CANSparkFlex(21, MotorType.kBrushless);
 
   //TalonFXConfiguration shooterConfigs = new TalonFXConfiguration();
+  
   Slot0Configs slot0Configs = new Slot0Configs();
   MotionMagicConfigs motionMagicConfigs = new MotionMagicConfigs();
+  MotionMagicVoltage request = new MotionMagicVoltage(0).withSlot(0);
   private final Servo exampleServo = new Servo(9);
 
   public boolean shooterRPMreached = false;
@@ -34,6 +38,17 @@ public class ShooterSubsystem extends SubsystemBase {
     motionMagicConfigs.MotionMagicCruiseVelocity = 80;
     motionMagicConfigs.MotionMagicAcceleration = 100;
     motionMagicConfigs.MotionMagicJerk = 1600;
+  }
+
+  public void setShooterRPM1(double setRPM) {
+    shooterRPMreached = false;
+    shootermotor_1.set(setRPM);
+    shooterRPMreached = true;
+  }
+  public void setShooterRPM2(double setRPM) {
+    shooterRPMreached = false;
+    shootermotor_2.set(setRPM);
+    shooterRPMreached = true;
   }
 
   public Command shooterDefault(){
@@ -63,10 +78,10 @@ public class ShooterSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void setShooter(double speed) {
-    shootermotor_1.set(speed);
-    shootermotor_2.set(speed*0.9);
-  }
+  //public void setShooter(double speed) {
+   // shootermotor_1.set(speed);
+    //shootermotor_2.set(speed*0.9);
+ // }
 
 }
 
